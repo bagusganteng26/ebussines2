@@ -1,2 +1,3 @@
 *
 !.gitignore
+rm -rf bootstrap/cache/*.php

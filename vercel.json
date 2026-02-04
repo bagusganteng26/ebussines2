@@ -1,15 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/index.php",
-      "use": "vercel-php@0.7.2"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.2"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(css|js|images)/(.*)",
@@ -25,9 +20,19 @@
     }
   ],
   "env": {
+    "APP_NAME": "Laravel",
     "APP_ENV": "production",
+    "APP_KEY": "base64:ILpY2+hrHm5zlxSSQ+NDN5b2bD3ETf7tEV2mLA8Y84M=",
     "APP_DEBUG": "false",
-    "APP_URL": "https://yourdomain.vercel.app",
-    "VERCEL_DEMO_MODE": "true"
+    "APP_URL": "https://ebussines2-1c1d.vercel.app",
+    
+    "LOG_CHANNEL": "stderr",
+    "LOG_LEVEL": "error",
+    
+    "SESSION_DRIVER": "cookie",
+    "SESSION_LIFETIME": "120",
+    
+    "CACHE_DRIVER": "array",
+    "QUEUE_CONNECTION": "sync"
   }
 }

@@ -5,27 +5,28 @@ if (!defined('LARAVEL_START')) {
     define('LARAVEL_START', microtime(true));
 }
 
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-*/
-
+// Load autoloader
 require __DIR__ . '/../vendor/autoload.php';
 
-/*
-|--------------------------------------------------------------------------
-| Turn On The Lights
-|--------------------------------------------------------------------------
-*/
-
+// Bootstrap Laravel
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-*/
+// Set storage path untuk Vercel
+$app->useStoragePath('/tmp/storage');
+
+// Create necessary directories
+if (!file_exists('/tmp/storage/framework/cache')) {
+    mkdir('/tmp/storage/framework/cache', 0755, true);
+}
+if (!file_exists('/tmp/storage/framework/sessions')) {
+    mkdir('/tmp/storage/framework/sessions', 0755, true);
+}
+if (!file_exists('/tmp/storage/framework/views')) {
+    mkdir('/tmp/storage/framework/views', 0755, true);
+}
+if (!file_exists('/tmp/storage/logs')) {
+    mkdir('/tmp/storage/logs', 0755, true);
+}
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
