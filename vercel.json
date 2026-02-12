@@ -22,9 +22,9 @@
   "env": {
     "APP_NAME": "Laravel",
     "APP_ENV": "production",
-    "APP_KEY": "base64:ILpY2+hrHm5zlxSSQ+NDN5b2bD3ETf7tEV2mLA8Y84M=",
+    "APP_KEY": "base64:8RMQ/nH4oIPv9lckl5uVRM39EanXkhkAQ1iaH5y6LM0=",
     "APP_DEBUG": "false",
-    "APP_URL": "https://ebussines2-1c1d.vercel.app",
+    "APP_URL": "https://ebussines2-ku.vercel.app",
     
     "LOG_CHANNEL": "stderr",
     "LOG_LEVEL": "error",
